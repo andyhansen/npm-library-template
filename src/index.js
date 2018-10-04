@@ -1,1 +1,5 @@
-export default () => console.log('This is pretty cool')
+import React from 'react'
+
+const Hello = () => <p>Hello, it&apos;s all working!!</p>
+
+export default Hello

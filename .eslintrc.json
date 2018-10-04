@@ -7,9 +7,11 @@
     "jest"
   ],
   "rules": {
-      "semi": ["error", "never"]
+      "semi": ["error", "never"],
+      "react/jsx-filename-extension": "off"
   },
   "env": {
+    "browser": true,
     "jest/globals": true
   }
 }
