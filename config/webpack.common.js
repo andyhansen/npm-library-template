@@ -1,13 +1,25 @@
-const webpack = require('webpack');
-const path = require('path');
+const path = require('path')
 
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin') // eslint-disable-line import/no-extraneous-dependencies
 
 module.exports = {
   module: {
     rules: [
       {
-        include: [path.resolve(__dirname, 'src'), path.resolve(__dirname, 'dev')],
+        include: [path.resolve(__dirname, '../src'), path.resolve(__dirname, '../dev')],
+        test: /\.(js|jsx|mjs)$/,
+        enforce: 'pre',
+        use: [
+          {
+            options: {
+              eslintPath: require.resolve('eslint'),
+            },
+            loader: require.resolve('eslint-loader'),
+          },
+        ],
+      },
+      {
+        include: [path.resolve(__dirname, '../src'), path.resolve(__dirname, '../dev')],
         test: /\.js$/,
         loader: 'babel-loader',
         options: {
@@ -51,4 +63,4 @@ module.exports = {
       name: false,
     },
   },
-};
+}
