@@ -1,6 +1,14 @@
 {
-  "extends": "airbnb",
+  "extends": [
+    "airbnb"
+  ],
+  "plugins": [
+    "jest"
+  ],
   "rules": {
       "semi": ["error", "never"]
+  },
+  "env": {
+    "jest/globals": true
   }
 }
