@@ -13,14 +13,6 @@ module.exports = {
         options: {
           plugins: ['syntax-dynamic-import'],
           cacheDirectory: true,
-          // presets: [
-          // 	[
-          // 		'env',
-          // 		{
-          // 			modules: false
-          // 		}
-          // 	]
-          // ]
         },
       },
       {
