@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   module: {
@@ -11,7 +11,7 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         options: {
-          plugins: ['syntax-dynamic-import'],
+          plugins: ['@babel/plugin-syntax-dynamic-import'],
           cacheDirectory: true,
         },
       },
@@ -19,36 +19,36 @@ module.exports = {
         test: /\.(scss|css)$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader
+            loader: MiniCssExtractPlugin.loader,
           },
           {
             loader: 'css-loader',
             options: {
-              sourceMap: true
-            }
+              sourceMap: true,
+            },
           },
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: true
-            }
-          }
-        ]
-      }
-    ]
+              sourceMap: true,
+            },
+          },
+        ],
+      },
+    ],
   },
   optimization: {
     splitChunks: {
       cacheGroups: {
         vendors: {
           priority: -10,
-          test: /[\\/]node_modules[\\/]/
-        }
+          test: /[\\/]node_modules[\\/]/,
+        },
       },
       chunks: 'async',
       minChunks: 1,
       minSize: 30000,
-      name: false
-    }
-  }
+      name: false,
+    },
+  },
 };
