@@ -8,12 +8,19 @@ const common = require('./webpack.common')
 module.exports = merge(common, {
   mode: 'production',
   devtool: 'source-map',
-  entry: './src/index.js',
+  entry: path.resolve(__dirname, '../src/index.js'),
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: 'index.js',
+    library: 'LibraryTemplate',
+    libraryTarget: 'umd',
   },
+  // externals: {
+  //   React: 'react',
+  // },
   plugins: [
-    new CleanWebpackPlugin(['../dist']),
+    new CleanWebpackPlugin([path.resolve(__dirname, '../dist')], {
+      root: path.resolve(__dirname, '../'),
+    }),
   ],
 })
