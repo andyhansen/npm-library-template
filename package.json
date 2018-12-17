@@ -8,8 +8,8 @@
     "start": "webpack-dev-server --open --config ./config/webpack.dev.js",
     "build": "webpack --config ./config/webpack.prod.js",
     "test": "jest",
-    "lint": "eslint src/**/*.js dev/**/*.js config/**/*.js",
-    "lint:fix": "eslint --fix src/**/*.js dev/**/*.js config/**/*.js"
+    "lint": "eslint src/*.js src/**/*.js config/*.js config/**/*.js",
+    "lint:fix": "eslint --fix src/*.js src/**/*.js config/*.js config/**/*.js"
   },
   "author": "Andy",
   "license": "MIT",

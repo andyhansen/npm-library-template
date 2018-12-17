@@ -1,1 +1,1 @@
-export default () => console.log('This is pretty cool')
+console.log('This is pretty cool')

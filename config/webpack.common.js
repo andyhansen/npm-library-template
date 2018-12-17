@@ -6,20 +6,7 @@ module.exports = {
   module: {
     rules: [
       {
-        include: [path.resolve(__dirname, '../src'), path.resolve(__dirname, '../dev')],
-        test: /\.(js|jsx|mjs)$/,
-        enforce: 'pre',
-        use: [
-          {
-            options: {
-              eslintPath: require.resolve('eslint'),
-            },
-            loader: require.resolve('eslint-loader'),
-          },
-        ],
-      },
-      {
-        include: [path.resolve(__dirname, '../src'), path.resolve(__dirname, '../dev')],
+        include: [path.resolve(__dirname, '../src')],
         test: /\.js$/,
         loader: 'babel-loader',
         options: {
