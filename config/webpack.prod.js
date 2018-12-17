@@ -1,24 +1,24 @@
-const merge = require('webpack-merge') // eslint-disable-line import/no-extraneous-dependencies
-const path = require('path')
+const merge = require("webpack-merge");
+const path = require("path");
 
-const CleanWebpackPlugin = require('clean-webpack-plugin') // eslint-disable-line import/no-extraneous-dependencies
-const common = require('./webpack.common')
+const CleanWebpackPlugin = require("clean-webpack-plugin");
+const common = require("./webpack.common");
 
 module.exports = merge(common, {
-  mode: 'production',
-  devtool: 'source-map',
+  mode: "production",
+  devtool: "source-map",
   output: {
-    path: path.resolve(__dirname, '../dist'),
-    filename: 'index.js',
-    library: 'LibraryTemplate',
-    libraryTarget: 'umd',
+    path: path.resolve(__dirname, "../dist"),
+    filename: "index.js",
+    library: "LibraryTemplate",
+    libraryTarget: "umd"
   },
   // externals: {
   //   React: 'react',
   // },
   plugins: [
-    new CleanWebpackPlugin([path.resolve(__dirname, '../dist')], {
-      root: path.resolve(__dirname, '../'),
-    }),
-  ],
-})
+    new CleanWebpackPlugin([path.resolve(__dirname, "../dist")], {
+      root: path.resolve(__dirname, "../")
+    })
+  ]
+});
